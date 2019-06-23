@@ -1,0 +1,120 @@
+<div class="content-wrapper">
+  <div class="page-title">
+    <div>
+      <h1><i class="fa fa-dashboard"></i> Assets</h1>
+      <p>{{pageTitle}}</p>
+    </div>
+    <div>
+      <ul class="breadcrumb">
+        <li>
+          <i class="fa fa-home fa-lg"></i>
+        </li>
+        <li>
+          <a (click)="naviageToLanding()">Assets List</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="card">
+        <div class="card-body ">
+          <form [formGroup]="assetsForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Serial Number<span class="required"> *</span></label>
+                <input class="form-control" type="text" formControlName="serialNumber">
+                <div class="alert" *ngIf="!assetsForm.controls['serialNumber'].valid && assetsForm.controls['serialNumber'].touched">
+                  Serial NumberRequired
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label>Asset Name<span class="required"> *</span></label>
+                <input class="form-control" type="text" formControlName="assetName">
+                <div class="alert"
+                  *ngIf="!assetsForm.controls['assetName'].valid && assetsForm.controls['assetName'].touched">Serial
+                  NumberRequired
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Sub Location<span class="required"> *</span></label>
+                <select id="demoSelect" class="form-control" formControlName="subStationId">
+                  <optgroup label="Select Sub Location">
+                    <option *ngFor="let location of subLocationList" value={{location.id}}>{{location.name}}</option>
+                  </optgroup>
+                </select>
+                <div class="alert" *ngIf="!assetsForm.controls['subStationId'].valid && assetsForm.controls['subStationId'].touched">
+                  LocatedSubstation Required
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label>Date of manufacture<span class="required"> *</span></label>
+                <div class="form-group">
+                  <div class='input-group date' id='datetimepicker1'>
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dateOfManufacture"
+                      formControlName="dateOfManufacture" ngbDatepicker #d="ngbDatepicker">
+                    <span class="input-group-addon">
+                      <a class="fa fa-calendar" (click)="d.toggle()"></a>
+                    </span>
+                  </div>
+                  <div class="alert"
+                    *ngIf="!assetsForm.controls['dateOfManufacture'].valid && assetsForm.controls['dateOfManufacture'].touched">
+                    Date of Manufacture Required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <button class="btn btn-primary icon-btn" type="submit" [disabled]="!assetsForm.valid">
+                  <i class="fa fa-fw fa-lg fa-check-circle"></i>Save</button>
+                &nbsp;&nbsp;&nbsp;
+                <a class="btn btn-default icon-btn" href="#">
+                  <i class="fa fa-fw fa-lg fa-times-circle"></i>Clear</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+<div>
+  <div id="formModal" #formModal class="modal fade">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create User Role</h4>
+
+        </div>
+        <div class="modal-body">
+          <div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker();
+  });
+</script>
