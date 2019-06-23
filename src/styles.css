@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+.alert {
+  color: #f51212;
+  padding: 7px;
+  font-size: .9em;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: 2s alertAnim forwards;
+}
+.required
+{
+  color: #f51212;
+}
+@keyframes alertAnim {
+  from {
+      opacity:0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity:1;
+      transform: translateY(0);
+  }
+}

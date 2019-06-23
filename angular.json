@@ -23,9 +23,23 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/bootstrap-select.css",
+              "src/assets/css/main.css",
+              "src/assets/css/pace.css",
+              "src/assets/css/font-awesome-4.7.0/css/font-awesome.min.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery-2.1.4.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/plugins/pace.min.js",
+              "src/assets/js/main.js",
+              "src/assets/js/plugins/dataTables.bootstrap.min.js",
+              "src/assets/js/plugins/select2.min.js",
+              "src/assets/js/plugins/bootstrap-datepicker.min.js"
+
+            ]
           },
           "configurations": {
             "production": {

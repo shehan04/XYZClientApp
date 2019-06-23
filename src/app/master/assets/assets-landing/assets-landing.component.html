@@ -1,0 +1,58 @@
+<div class="content-wrapper">
+  <div class="page-title">
+    <div>
+      <h1><i class="fa fa-dashboard"></i> Assets</h1>
+      <p>Assets List</p>
+    </div>
+    <div>
+      <ul class="breadcrumb">
+        <li>
+          <i class="fa fa-home fa-lg"></i>
+        </li>
+        <li>
+          <a href="#">assets</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="card">
+        <div class="card-body">
+          <div class="modal-body"><button class="btn btn-primary"   (click)="addEditAsset(null)" >Create New</button></div>
+
+          <table id="gridDataTable" class="table table-hover table-bordered" >
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Serial number</th>
+                <th>Located substation</th>
+                <th>Date of manufacture</th>
+                <th>Active Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let returnItem of returnItemList">
+                <td>{{returnItem.name}}</td>
+                <td>{{returnItem.serialNumber}}</td>
+                <td>{{returnItem.subStation}}</td>
+                <td>{{returnItem.dateOfManufacture}}</td>
+                <td>{{returnItem.activeStatus}}</td>
+                <td><a ><i class="fa fa-pencil-square-o"  (click)="addEditAsset(returnItem.id)" ></i> </a> &nbsp; <a><i class="fa fa-times" aria-hidden="true"></i></a> </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
